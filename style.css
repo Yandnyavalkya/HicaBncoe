@@ -54,8 +54,8 @@ body {
 
 /* Meet the Team Section */
 #about {
-    margin-top: 100px;
-    padding: 50px;
+    margin-top: 150px;
+    padding: 100px;
     text-align: center;
 }
 
@@ -216,19 +216,10 @@ body {
 
 
 
-#home {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background: #121212;
-    color: white;
-    font-family: Arial, sans-serif;
-    text-align: center;
-}
+
 
 .title {
+    margin-top: 300px;
     font-size: 2.5em;
     font-weight: bold;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
@@ -239,7 +230,7 @@ body {
 .countdown {
     font-size: 2em;
     font-weight: bold;
-    margin-top: 20px;
+    margin-top: 30px;
     padding: 10px 20px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
