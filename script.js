@@ -17,7 +17,7 @@ function createBackgroundStars() {
 
 function updateCountdown() {
     const countdownElement = document.getElementById('countdown');
-    const eventDate = new Date("March 20, 2025 00:00:00").getTime();
+    const eventDate = new Date("March 5, 2025 11:15:00").getTime();
 
     function updateTime() {
         const now = new Date().getTime();

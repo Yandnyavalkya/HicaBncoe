@@ -25,9 +25,14 @@
 
     <!-- Home Section -->
     <section id="home">
-        <h1 class="Section-title">Get Ready For</h1>
-        <h2>First Event of HICA</h2>
-        <h3>At our BNOCE</h3>
+        <div class="countdown-card">
+            <div class="card">
+                <div>Get Ready for the<br> First Event of HICA<br> at BNCOE</div>
+                <div class="countdown-container">
+                    <div class="countdown" id="timer"></div>
+                </div>
+            </div>
+        </div>
     </section>
     
 
@@ -36,7 +41,7 @@
         <h2 class="section-title">Meet the Core Team</h2><br/>
         <h1></h1>
         <div class="team-container">
-            <div class="card">
+            <div class="card2">
                 <img src="img/Aboli Pic.jpeg.jpg" alt="Aboli Wanare">
                 <p>Chapter Lead</p>
                 <h3>Aboli Wanare</h3>
@@ -48,7 +53,7 @@
                     <a href="https://x.com/aboliwanare?s=21" target="_blank"><i class="fab fa-twitter"></i></a>
                 </div>
             </div>
-            <div class="card">
+            <div class="card2">
                 <img src="img/Gaurav Sir Photo.jpeg.jpg" alt="Gaurav Yeskar">
                 <p>Co-Chapter Lead</p>
                 <h3>Gaurav Yeskar</h3>
@@ -233,5 +238,20 @@
     </section>
 
     <script src="script.js"></script>
+    <script>
+        function updateCountdown() {
+            const eventDate = new Date('March 5, 2025 11:00:00').getTime();
+            setInterval(() => {
+                const now = new Date().getTime();
+                const timeLeft = eventDate - now;
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+                document.getElementById('timer').innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            }, 1000);
+        }
+        updateCountdown();
+    </script>
 </body>
 </html>
