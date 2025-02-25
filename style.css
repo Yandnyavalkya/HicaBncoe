@@ -19,8 +19,10 @@ body {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center; /* Ensures vertical alignment */
     background: rgba(0, 0, 0, 0.8);
-    padding: 15px;
+    padding: 15px 20px;
+    z-index: 1000;
 }
 
 .navbar ul {
@@ -31,26 +33,75 @@ body {
     margin: 0;
 }
 
+.navbar ul li {
+    display: flex;
+    align-items: center;
+}
+
 .navbar a {
     color: white;
     text-decoration: none;
     font-size: 16px;
-    padding: 16px;
-    margin: 16px;
+    padding: 12px;
 }
 
 .navbar img {
-    width: auto;
-    height: 80px;
+    width: 60px;
+    height: 60px;
 }
 
 .register-btn {
-    background: orange;
+    background: linear-gradient(45deg, #ff00ff, #00d4ff);
     padding: 10px 15px;
     border-radius: 5px;
     color: white;
     text-decoration: none;
 }
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: row;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background: rgba(0, 0, 0, 0.9);
+        width: 100%;
+        display: none;
+        padding: 15px 20px;
+    }
+
+    .navbar ul.show {
+        display: flex;
+    }
+
+    .navbar ul li {
+        width: 100%;
+    }
+
+    .navbar a {
+        display: block;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        font-size: 24px;
+        color: white;
+        padding: 10px;
+    }
+}
+
+
 
 /* Meet the Team Section */
 #about {
@@ -92,7 +143,7 @@ body {
 
 /* Card Styling */
 .card2, .card3, .card4 {
-    background: rgb(12, 12, 42);
+    background: #2b0949;
     border-radius: 10px;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -150,6 +201,7 @@ body {
     letter-spacing: 5px;
     text-shadow: 0 0 10px white;
     margin-top: 150px;
+    font-style: Montserrat;
 }
 
 .countdown {
@@ -221,6 +273,7 @@ body {
 
 .title {
     margin-top: 200px;
+    font-style: Montserrat;
     font-size: 2.5em;
     font-weight: bold;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
@@ -232,10 +285,24 @@ body {
     font-size: 2em;
     font-weight: bold;
     margin-top: 30px;
-    padding: 10px 20px;
-    background: rgba(255, 255, 255, 0.1);
+    padding: 15px 30px;
+    background: linear-gradient(145deg, #1e1e1e, #292929);
     border-radius: 10px;
-    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+    color: #00ffff;
+    text-shadow: 2px 2px 5px rgba(0, 255, 255, 0.8), 
+                 4px 4px 10px rgba(0, 0, 0, 0.6);
+    box-shadow: 5px 5px 15px rgba(0, 255, 255, 0.5), 
+                -5px -5px 15px rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    transform: perspective(500px) rotateX(10deg);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.countdown:hover {
+    transform: perspective(500px) rotateX(0deg) scale(1.05);
+    box-shadow: 6px 6px 20px rgba(0, 255, 255, 0.7), 
+                -6px -6px 20px rgba(0, 0, 0, 0.6);
 }
 
 
@@ -246,23 +313,24 @@ body {
     font-size: 3.5rem;
     font-weight: bold;
     text-transform: uppercase;
+    font-style: Montserrat;
     letter-spacing: 5px;
-    text-shadow: 0 0 10px cyan;
-    animation: fadeIn 1.5s ease-in, changeColor 7s infinite;
+    text-shadow: 0 0 10px rgb(6, 16, 16);
+    animation: fadeIn 1.5s ease-in, changeColor 1s infinite;
     transition: transform 0.3s ease-in-out;
 }
 
 @keyframes changeColor {
-    0% { color: cyan; }
-    25% { color: magenta; }
-    50% { color: yellow; }
-    75% { color: lime; }
-    100% { color: cyan; }
+    0% { color: #993fea; }
+    25% { color: #993fea; }
+    50% { color: #993fea; }
+    75% { color: #993fea; }
+    100% { color: #993fea; }
 }
 
 .title:hover {
     transform: scale(1.1);
-    text-shadow: 0 0 20px magenta;
+    text-shadow: 0 0 20px #993fea;
 }
 
 .countdown {
@@ -277,7 +345,7 @@ body {
     text-shadow: 0 0 10px white;
     position: relative;
     overflow: hidden;
-    animation: fadeIn 2s ease-in, changeTimerColor 0s infinite;
+    animation: fadeIn 2s ease-in, changeTimerColor 1s infinite;
     transition: transform 0.3s ease-in-out;
 }
 
@@ -328,4 +396,84 @@ body {
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
+
+
+body {
+    background-color: #13151a;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.containeri {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.cardi {
+    background: #1c1e24;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 600px;
+    width: 90%;
+}
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+h2 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+p {
+    font-size: 1rem;
+    color: #ccc;
+    max-width: 600px;
+    margin: 10px auto;
+}
+.btn {
+    margin: 20px;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(45deg, #ff00ff, #00d4ff);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.btn:hover {
+    transform: scale(1.1);
+}
+.social-iconsi {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+.social-iconsi a {
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: transform 0.3s, color 0.3s;
+}
+.social-iconsi a:hover {
+    color: #00d4ff;
+    transform: scale(1.2);
+}
+
+.social-icons a:hover {
+    color: #00d4ff;
+    transform: scale(1.2);
 }
